@@ -1,0 +1,18 @@
+﻿@{
+    ViewBag.Title = "Speed Calculator";
+}
+
+<h2>Speed Calculator</h2>
+
+@using (Html.BeginForm("CalculateSpeed", "Home", FormMethod.Post))
+{
+    <label for="speed">Speed (m/s):</label>
+    <input type="number" name="speed" required />
+    <br />
+    <input type="submit" value="Calculate" />
+}
+
+@if (ViewBag.SpeedKmPerHour != null)
+{
+    <p>The speed in km/h is: @ViewBag.SpeedKmPerHour</p>
+}
